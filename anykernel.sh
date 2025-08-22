@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Shironeko by olzhas0986
+kernel.string=Pureline Kernel by olzhas0986
 do.devicecheck=1
 do.modules=0
 do.systemless=1
@@ -37,13 +37,12 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 # Auto‑detect variant from zip name
 case "$ZIPFILE" in
   *-miui*)    v=miui;;
-  *-ir*)      v=ir;;
-  *N0Kernel*) v=default;;
+  *Pureline*) v=default;;
 esac
 
 # If none are detected (adb sideload), let the user pick
 if [ -z "$v" ]; then
-  set -- miui ir default
+  set -- miui default
   i=1; n=$#
   prev_option=""
   ui_print "Select DTBO variant:"
